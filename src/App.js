@@ -1,23 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Truyen from "./components/Truyen";
+import Filter from "./pages/Filter";
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+
+const listPage = [
+  {
+    path: "",
+    element: <Home />,
+  },
+  {
+    path: "login",
+    element: <Login />,
+  },
+  {
+    path: "filter",
+    element: <Filter />,
+  },
+];
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          {listPage.map((page) => {
+            return (
+              <Route key={page.path} path={page.path} element={page.element} />
+            );
+          })}
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
