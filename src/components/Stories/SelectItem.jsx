@@ -6,11 +6,11 @@ const SelectItem = ({ item, isActive, func, showOff }) => {
       <a
         href="#"
         className={
-          "text-gray-700 block px-4 py-2 text-sm " +
-          (isActive ? "bg-yellow text-white" : "")
+          "text-xs block px-4 py-2 " +
+          (isActive ? "bg-gray-light text-white" : "")
         }
         role="menuitem"
-        tabindex="-1"
+        tabIndex="-1"
         id={"menu-item-" + item}
         onClick={() => {
           func(item);

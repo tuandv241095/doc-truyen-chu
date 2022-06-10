@@ -5,10 +5,10 @@ const NavRankItem = ({ href, isActive, item, func }) => {
     <li className={isActive ? "" : "border-b border-orange"}>
       <a
         className={
-          "bg-white inline-block py-2 px-4 font-semibold text-xs h-full " +
+          "inline-block py-2 px-4 font-semibold text-center text-xs h-full " +
           (isActive
-            ? "text-orange border-l border-t border-r rounded-t border-orange"
-            : "text-gray-dark hover:text-blue-darker")
+            ? "text-gray-dark dark:text-white border-l border-t border-r rounded-t border-gray-dark dark:border-gray-light"
+            : "")
         }
         href={href}
         onClick={() => func(item)}

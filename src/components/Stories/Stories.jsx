@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Pagination from "../Pagination/Pagination";
 import FilterDate from "./FilterDate";
 import NavRank from "./NavRank";
 import NavRankItem from "./NavRankItem";
@@ -43,6 +44,7 @@ const Stories = ({ stories, ranks, filters }) => {
           <StoryItem key={story.id} story={story} />
         ))}
       </StoriesList>
+      <Pagination />
     </div>
   );
 };

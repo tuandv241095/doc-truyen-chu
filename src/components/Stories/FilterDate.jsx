@@ -6,7 +6,7 @@ const FilterDate = ({ select, children, show, setShow }) => {
     <div className="flex flex-col text-left w-full">
       <button
         type="button"
-        className="inline-flex justify-center ml-auto rounded-md border border-orange text-orange font-semibold shadow-sm px-2 py-2 bg-white text-xs"
+        className="inline-flex justify-center ml-auto rounded-md border border-orange text-orange font-semibold shadow-sm px-2 py-2 text-xs"
         id="menu-button"
         onClick={handleShow}
         aria-expanded="true"
@@ -21,9 +21,9 @@ const FilterDate = ({ select, children, show, setShow }) => {
           aria-hidden="true"
         >
           <path
-            fill-rule="evenodd"
+            fillRule="evenodd"
             d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-            clip-rule="evenodd"
+            clipRule="evenodd"
           />
         </svg>
       </button>
@@ -31,16 +31,16 @@ const FilterDate = ({ select, children, show, setShow }) => {
       <div
         className={
           show
-            ? "origin-top-right relative w-full rounded-md shadow-lg bg-white ring-opacity-5 focus:outline-none"
+            ? "origin-top-right relative w-full rounded-md shadow-lg ring-opacity-5 focus:outline-none"
             : "hidden"
         }
         role="menu"
         aria-orientation="vertical"
         aria-labelledby="menu-button"
-        tabindex="-1"
+        tabIndex="-1"
       >
         <ul
-          className="absolute right-0 py-1 mt-2 w-40 flex flex-col bg-white border-orange border rounded-md"
+          className="absolute right-0 py-1 mt-2 w-40 flex flex-col border-orange border rounded-md bg-white dark:bg-dark"
           role="none"
         >
           {children}
