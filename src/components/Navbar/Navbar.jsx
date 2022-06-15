@@ -30,7 +30,7 @@ const Navbar = ({ genres, ranks }) => {
   const [setTheme, colorTheme] = useDarkMode();
 
   return (
-    <div className="fixed top-0 w-[100%] h-[72px] bg-white dark:bg-dark text-gray-light shadow-lg dark:shadow-gray-light z-10">
+    <div className="fixed top-0 w-[100%] h-[72px] bg-white dark:bg-dark text-gray-light shadow-lg dark:shadow-gray-light z-50">
       <div className="max-w-[1280px] mx-auto p-4 flex justify-between items-center w-full h-full">
         {/* Hamburger */}
         <div
