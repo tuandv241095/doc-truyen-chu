@@ -1,16 +1,15 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const SelectItem = ({ item, isActive, func, showOff }) => {
   return (
     <li>
-      <a
-        href="#"
+      <Link
+        to="#"
         className={
-          "text-xs block px-4 py-2 " +
-          (isActive ? "bg-gray-light text-white" : "")
+          "text-xs block px-4 py-2 font-semibold " +
+          (isActive ? "bg-my-theme text-white" : "")
         }
-        role="menuitem"
-        tabIndex="-1"
         id={"menu-item-" + item}
         onClick={() => {
           func(item);
@@ -18,7 +17,7 @@ const SelectItem = ({ item, isActive, func, showOff }) => {
         }}
       >
         {item}
-      </a>
+      </Link>
     </li>
   );
 };

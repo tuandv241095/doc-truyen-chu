@@ -6,7 +6,7 @@ const FilterDate = ({ select, children, show, setShow }) => {
     <div className="flex flex-col text-left w-full">
       <button
         type="button"
-        className="inline-flex justify-center ml-auto rounded-md border border-orange text-orange font-semibold shadow-sm px-2 py-2 text-xs"
+        className="inline-flex justify-center ml-auto rounded-md border border-my-theme text-my-theme font-semibold shadow-sm px-2 py-2 text-xs"
         id="menu-button"
         onClick={handleShow}
         aria-expanded="true"
@@ -40,7 +40,7 @@ const FilterDate = ({ select, children, show, setShow }) => {
         tabIndex="-1"
       >
         <ul
-          className="absolute right-0 py-1 mt-2 w-40 flex flex-col border-orange border rounded-md bg-white dark:bg-dark"
+          className="absolute right-0 py-1 mt-2 w-40 flex flex-col border-my-theme border rounded-md bg-white dark:bg-dark"
           role="none"
         >
           {children}

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const StoryBadge = ({ name }) => {
   return (
@@ -7,7 +8,7 @@ const StoryBadge = ({ name }) => {
         "inline-block rounded-full m-1 px-2 py-1 text-xs font-bold border-2 text-my-theme border-my-theme"
       }
     >
-      {name}
+      <Link to="/">{name}</Link>
     </span>
   );
 };

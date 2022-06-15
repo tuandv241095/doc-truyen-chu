@@ -66,7 +66,7 @@ const Filters = ({ filters }) => {
 
       <div
         className={
-          "fixed top-[72px] left-0 bg-white dark:bg-dark h-screen w-full lg:hidden scrollbar " +
+          "fixed top-[72px] left-0 bg-white dark:bg-dark h-[calc(100vh_-_72px)] w-full lg:hidden scrollbar " +
           (openFilter ? "" : "hidden")
         }
       >

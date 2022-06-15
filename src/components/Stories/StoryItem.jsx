@@ -1,19 +1,28 @@
 import React from "react";
 import { BsFillPenFill } from "react-icons/bs";
 import { FaComments } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import Book from "../Book/Book";
 import StoryBadge from "./StoryBadge";
 
-const StoryItem = ({ story }) => {
+const StoryItem = ({ story, mini }) => {
   return (
-    <div className="w-full min-w-[400px] flex space-x-4 lg:space-x-4 justify-between items-center pb-2 border-b border-orange">
-      <img
-        src="https://picsum.photos/id/1043/300/400"
-        className="w-[100px] h-[125px] hover:scale-125 duration-200 cursor-pointer"
-        alt="lorem ipsum"
-      />
+    <div className="w-full flex space-x-4 lg:space-x-4 justify-between pb-4 border-b border-orange">
+      <div
+        className={
+          "pt-1.5 " +
+          (mini ? "min-w-[90px] h-[120px]" : "min-w-[105px] h-[140px]")
+        }
+      >
+        <Link to="/">
+          <Book img={"https://picsum.photos/id/1043/300/400"} />
+        </Link>
+      </div>
       <div className="flex flex-col">
-        <div className="line-clamp-1 font-bold text-sm">{story.name}</div>
-        <div className="flex items-center">
+        <div className="line-clamp-1 font-bold text-sm hover:text-my-theme">
+          <Link to="/">{story.name}</Link>
+        </div>
+        <div className="flex items-center space-x-1">
           <div className="flex items-center">
             <span className="sr-only">Star rating</span>
             <svg
@@ -26,44 +35,48 @@ const StoryItem = ({ story }) => {
             </svg>
             <p className="ml-1 text-xs font-bold">{story.rate}</p>
             <span className="w-0.5 h-0.5 mx-1 bg-dark rounded-full dark:bg-gray-light"></span>
-            <a
-              href="#"
+            <Link
+              to="#"
               className="text-xs text-gray-500 font-sm  underline hover:no-underline hover:text-dark dark:hover:text-white"
             >
               {story.countRate} Đánh giá
-            </a>
+            </Link>
           </div>
-          <em>|</em>
+          <em>| </em>
           <div className="flex items-center text-xs hover:text-dark dark:hover:text-white">
             <span className="sr-only">Comments</span>
             <FaComments className="text-blue" />
             <span className="w-0.5 h-0.5 mx-1 bg-dark rounded-full dark:bg-gray-light"></span>
-            <a
-              href="#"
+            <Link
+              to="#"
               className="text-xs text-gray-500 font-sm underline hover:no-underline"
             >
               {story.countComment} Bình luận
-            </a>
+            </Link>
           </div>
         </div>
-        <div className="max-h-[75px] line-clamp-3 text-sm">
+        <div
+          className={
+            "max-h-[75px] text-sm " + (mini ? "line-clamp-2" : "line-clamp-3")
+          }
+        >
           {story.description}
         </div>
         <div className="flex items-center text-xs space-x-2 pt-1">
           <div className="text-my-theme">{story.status}</div>
           <span className="w-0.5 h-0.5 mx-1 bg-dark rounded-full dark:bg-gray-light"></span>
-          <div className="text-my-theme">{story.countChap} Chương</div>
-          <span className="w-0.5 h-0.5 mx-1 bg-dark rounded-full dark:bg-gray-light"></span>
-          <div>{story.lastChap}</div>
+          <div className="text-my-theme hover:underline">
+            <Link to="/">{story.countChap} Chương</Link>
+          </div>
         </div>
         <div className="flex justify-between text-sm ">
-          <div className="flex items-center space-x-2">
-            <BsFillPenFill />
-            <p className="max-w-[140px] lg:max-w-[200px] line-clamp-1 text-sm">
-              {story.author}
+          <div className="flex items-center space-x-1 group hover:text-my-theme">
+            <BsFillPenFill className="group-hover:text-dark dark:group-hover:text-white" />
+            <p className="w-full line-clamp-1 text-sm ">
+              <Link to="/">{story.author}</Link>
             </p>
           </div>
-          <div>
+          <div className="flex min-w-[140px] justify-end">
             <StoryBadge name={story.category} />
           </div>
         </div>

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Dropdown = ({ items }) => {
   return (
@@ -11,16 +12,14 @@ const Dropdown = ({ items }) => {
     >
       <div className="py-1 grid grid-cols-2" role="none">
         {items.map((item, id) => (
-          <a
+          <Link
             key={id}
-            href="filter"
+            to="filter"
             className=" block px-4 py-3 text-sm hover:text-gray dark:hover:text-white"
-            role="menuitem"
-            tabIndex="-1"
             id={"menu-item-" + id}
           >
             {item.name}
-          </a>
+          </Link>
         ))}
       </div>
     </div>

@@ -223,11 +223,11 @@ const filterStories = [
 
 const FilterStories = () => {
   return (
-    <div className="page grid grid-cols-8 gap-x-10 gap-y-3">
-      <div className="col-span-8 lg:col-span-2">
+    <div className="page grid grid-cols-7 gap-x-10 gap-y-3">
+      <div className="col-span-7 lg:col-span-2">
         <Filters filters={filterStories} />
       </div>
-      <div className="col-span-8 lg:col-span-6 flex flex-col justify-between items-center w-full h-full">
+      <div className="col-span-7 lg:col-span-5 flex flex-col justify-between items-center w-full h-full">
         <Stories ranks={ranks} stories={stories} filters={filters} />
       </div>
     </div>

@@ -30,7 +30,7 @@ const Navbar = ({ genres, ranks }) => {
   const [setTheme, colorTheme] = useDarkMode();
 
   return (
-    <div className="fixed top-0 w-full min-w-[500px] h-[72px] bg-white dark:bg-dark text-gray-light shadow-lg dark:shadow-gray-light z-10">
+    <div className="fixed top-0 w-[100%] h-[72px] bg-white dark:bg-dark text-gray-light shadow-lg dark:shadow-gray-light z-10">
       <div className="max-w-[1280px] mx-auto p-4 flex justify-between items-center w-full h-full">
         {/* Hamburger */}
         <div
@@ -113,7 +113,7 @@ const Navbar = ({ genres, ranks }) => {
           className={
             !nav
               ? "hidden"
-              : "absolute md:hidden top-[72px] left-0 w-full max-w-[250px] h-[calc(100vh_-_72px)] pb-[72px] scrollbar bg-white dark:bg-dark text-gray-light dark:text-white border-t border-gray-light shadow-lg dark:shadow-gray-light"
+              : "absolute md:hidden top-[72px] left-0 w-full min-w-[175px] max-w-[250px] h-[calc(100vh_-_72px)] pb-[72px] scrollbar bg-white dark:bg-dark text-gray-light dark:text-white border-t border-gray-light shadow-lg dark:shadow-gray-light"
           }
         >
           <ul className="px-2.5 pt-2 pb-3 space-y-1">

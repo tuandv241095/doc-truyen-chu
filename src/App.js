@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import Banner from "./components/Banner.jsx/Banner";
+import Banner from "./components/Banner/Banner";
 import Navbar from "./components/Navbar/Navbar";
 import FilterStories from "./pages/FilterStories";
 import Home from "./pages/Home";
@@ -46,7 +46,7 @@ const ranks = [
 
 function App() {
   return (
-    <div>
+    <div className="">
       <BrowserRouter>
         <Navbar genres={genres} ranks={ranks} />
         <div className="main">

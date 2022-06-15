@@ -11,22 +11,25 @@ const Pagination = () => {
     <div className="">
       <ul class="flex justify-end list-reset font-sans gap-1 items-center">
         <li>
-          <button className="border p-2 hover:text-white hover:bg-gray-dark dark:hover:bg-gray-light">
+          <button
+            className="border p-2 hover:text-white hover:bg-gray-dark dark:hover:bg-gray-light disabled:opacity-20"
+            disabled
+          >
             <FaAngleDoubleLeft />
           </button>
         </li>
         <li>
-          <button className="border p-2 hover:text-white hover:bg-gray-dark dark:hover:bg-gray-light">
+          <button className="border p-2 hover:text-white hover:bg-gray-dark dark:hover:bg-gray-light disabled:opacity-20">
             <FaAngleLeft />
           </button>
         </li>
         <li>
-          <button className="border p-2 hover:text-white hover:bg-gray-dark dark:hover:bg-gray-light">
+          <button className="border p-2 hover:text-white hover:bg-gray-dark dark:hover:bg-gray-light disabled:opacity-20">
             <FaAngleRight />
           </button>
         </li>
         <li>
-          <button className="border p-2 hover:text-white hover:bg-gray-dark dark:hover:bg-gray-light">
+          <button className="border p-2 hover:text-white hover:bg-gray-dark dark:hover:bg-gray-light disabled:opacity-20">
             <FaAngleDoubleRight />
           </button>
         </li>
