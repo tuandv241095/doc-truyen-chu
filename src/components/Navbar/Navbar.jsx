@@ -30,8 +30,8 @@ const Navbar = ({ genres, ranks }) => {
   const [setTheme, colorTheme] = useDarkMode();
 
   return (
-    <div className="fixed top-0 w-[100%] h-[72px] bg-white dark:bg-dark text-gray-light shadow-lg dark:shadow-gray-light z-50">
-      <div className="max-w-[1280px] mx-auto p-4 flex justify-between items-center w-full h-full">
+    <div className="fixed top-0 w-[100%] h-[72px] bg-white dark:bg-dark text-gray-light shadow-lg dark:shadow-gray-light z-50 font-roboto">
+      <div className="max-w-[1280px] mx-auto p-4 md:px-2 flex justify-between items-center w-full h-full">
         {/* Hamburger */}
         <div
           onClick={handleNav}
@@ -45,29 +45,28 @@ const Navbar = ({ genres, ranks }) => {
         </div>
 
         {/* Left Menu */}
-        <div className="hidden md:flex">
-          <ul className="hidden md:flex">
-            <li className="px-4 flex justify-between items-center w-full  font-bold">
+        <div className="hidden md:block">
+          <div className="hidden md:flex md:justify-between">
+            <div className="px-4 flex justify-between items-center font-bold">
               <Link to="/">DTC</Link>
-            </li>
-            <li className="group px-4 flex justify-between items-center w-full font-bold relative cursor-pointer hover:text-gray dark:hover:text-white hover:shadow-lg dark:shadow-gray-light py-[24px]">
+            </div>
+            <div className="group px-4 flex justify-between items-center font-bold relative cursor-pointer hover:text-gray dark:hover:text-white hover:shadow-lg dark:shadow-gray-light py-[24px]">
               <BiCategory className="mr-1" />
-              <span className="mr-1">Genre</span>
+              <span className="mr-1">Thể Loại</span>
               <span className="group-hover:rotate-180 duration-300">
                 <FaAngleDown />
               </span>
-
               <Dropdown items={genres} />
-            </li>
-            <li className="group px-4 flex justify-between items-center w-full font-bold relative cursor-pointer hover:text-gray dark:hover:text-white hover:shadow-lg dark:shadow-gray-light py-[24px]">
+            </div>
+            <div className="group px-4 flex justify-between items-center font-bold relative cursor-pointer hover:text-gray dark:hover:text-white hover:shadow-lg dark:shadow-gray-light py-[24px]">
               <RiBarChart2Line className="mr-1" />
-              <span className="mr-1">Rank</span>
+              <span className="mr-1">Xếp Hạng</span>
               <span className="group-hover:rotate-180 duration-300">
                 <FaAngleDown />
               </span>
               <Dropdown items={ranks} />
-            </li>
-          </ul>
+            </div>
+          </div>
         </div>
 
         {/* Right Menu */}
@@ -78,14 +77,14 @@ const Navbar = ({ genres, ranks }) => {
                 setTheme(colorTheme);
                 handleTheme();
               }}
-              className="px-4 hidden md:flex cursor-pointer"
+              className="px-4 md:px-2 lg:px-4 hidden md:flex cursor-pointer"
             >
               {sun ? <BsFillSunFill /> : <BsFillCloudMoonFill />}
             </li>
             <li>
               <input
                 type="search"
-                className="hidden md:flex px-2 py-1 border rounded-full focus:outline-none focus:shadow-lg"
+                className="hidden md:flex md:w-[150px] lg:w-[200px] flex-auto px-2 py-1 border rounded-full focus:outline-none focus:shadow-lg"
                 placeholder="Search"
                 aria-label="Search"
               />
@@ -96,7 +95,7 @@ const Navbar = ({ genres, ranks }) => {
             >
               {!search ? <BsSearch /> : <FaTimes />}
             </li>
-            <li className="hidden md:block px-4 cursor-pointer">
+            <li className="hidden md:block px-4 md:px-2 lg:px-4 cursor-pointer">
               <BsSearch />
             </li>
             <li className="px-4 hidden md:flex items-center w-full font-bold cursor-pointer hover:text-gray dark:hover:text-white hover:shadow-lg dark:shadow-gray-light py-[24px]">

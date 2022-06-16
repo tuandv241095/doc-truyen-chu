@@ -14,8 +14,6 @@ const UserReading = ({ mini }) => {
           { name: "Năm nay hoa lại nở", text: "Đã đọc: 100/121" },
           { name: "Xuân hạ thu đông", text: "Đã đọc: 100/121" },
           { name: "Trở lại tuổi 18", text: "Đã đọc: 100/121" },
-          { name: "Ta trường sinh vô địch", text: "Đã đọc: 100/121" },
-          { name: "Ta đến từ tương lai 3000 năm", text: "Đã đọc: 100/121" },
         ]}
       />
       {mini ? (

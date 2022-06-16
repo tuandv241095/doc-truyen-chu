@@ -2,6 +2,9 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
+      fontFamily: {
+        roboto: ["Roboto", "sans-serif"],
+      },
       animation: {
         "rotar-slow": "rotar 45s linear infinite",
         "rotar-fast": "rotar 15s linear infinite",
@@ -43,6 +46,7 @@ module.exports = {
     },
     translate: {
       // defaults to {}
+      "2rem": "2rem",
       none: "0",
       "1/2": "50%",
       full: "100%",

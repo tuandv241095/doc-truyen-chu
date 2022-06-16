@@ -1,12 +1,12 @@
 import React from "react";
 
-const Book = ({ img }) => {
+const BookCover = ({ img }) => {
   return (
     <div className="flex flex-col justify-center translate-z-none">
       <div className="flex items-center transform-preserve-3d perspective-500">
         <div className="-rotate-y-20 z-[5] shadow-md shadow-gray-light clear-both pt-[128%] w-[100%] h-[100%] before:absolute before:block before:top-0 before:left-0 before:w-[100%] before:h-[100%] before:border-2 before:z-10 before:opacity-90">
           <img
-            className="absolute block min-w-[60px] w-full h-full top-0"
+            className="absolute block min-w-[50px] w-full h-full top-0"
             src={img}
           />
         </div>
@@ -65,7 +65,7 @@ const Book = ({ img }) => {
           }}
         >
           <img
-            className="absolute block min-w-[60px] w-full h-full top-0"
+            className="absolute block min-w-[50px] w-full h-full top-0"
             src={img}
           />
         </div>
@@ -74,4 +74,4 @@ const Book = ({ img }) => {
   );
 };
 
-export default Book;
+export default BookCover;

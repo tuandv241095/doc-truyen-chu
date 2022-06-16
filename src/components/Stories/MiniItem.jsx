@@ -9,7 +9,7 @@ const MiniItem = ({ item }) => {
       <div className="flex space-x-2">
         <div className="">
           <img
-            className="h-[44px] min-w-[33px] shadow-md shadow-gray-light"
+            className="h-[40px] min-w-[30px] shadow-md shadow-gray-light"
             src="https://picsum.photos/id/1043/300/400"
           />
         </div>
@@ -20,15 +20,15 @@ const MiniItem = ({ item }) => {
           >
             {item.name}
           </Link>
-          <span className="text-sm line-clamp-1">{item.text}</span>
+          <span className="text-xs line-clamp-1">{item.text}</span>
         </div>
       </div>
       <div className="flex space-x-2 justify-end items-center">
         <Link to="/">
-          <AiFillRead className="cursor-pointer w-3.5 h-3.5 hover:text-my-theme" />
+          <AiFillRead className="cursor-pointer w-3 h-3 hover:text-my-theme" />
         </Link>
-        <FaBell className="cursor-pointer w-3.5 h-3.5 hover:text-my-theme" />
-        <FaTrash className="cursor-pointer w-3.5 h-3.5 hover:text-my-theme" />
+        <FaBell className="cursor-pointer w-3 h-3 hover:text-my-theme" />
+        <FaTrash className="cursor-pointer w-3 h-3 hover:text-my-theme" />
       </div>
     </div>
   );

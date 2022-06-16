@@ -1,4 +1,4 @@
-import { slides } from "../components/Slide/ListSlide";
+import { slides } from "../components/Slide/Slides";
 
 const slidesReducer = (state, event) => {
   if (event.type === "NEXT") {

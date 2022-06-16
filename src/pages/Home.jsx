@@ -1,10 +1,12 @@
 import React from "react";
-import ListSlide from "../components/Slide/ListSlide";
+import RecommendList from "../components/Section/Recommend";
+import Slides from "../components/Slide/Slides";
 import NewUpdate from "../components/Stories/NewUpdate";
 import RankCollection from "../components/Stories/RankCollection";
 import RankCollection2 from "../components/Stories/RankCollection2";
 import Recommend from "../components/Stories/Recommend";
 import UserReading from "../components/Stories/UserReading";
+import Story from "../components/Story.jsx/Story";
 
 const stories = [
   {
@@ -137,7 +139,8 @@ const Home = () => {
           <UserReading mini />
         </div>
         <div className="md:col-start-1 col-span-6 md:col-span-4">
-          <Recommend items={stories} />
+          {/* <Recommend items={stories} /> */}
+          <RecommendList items={stories} />
         </div>
       </div>
       <div className="hidden sm:block">
@@ -149,7 +152,7 @@ const Home = () => {
       <div>
         <NewUpdate />
       </div>
-      <div>
+      <div className="grid grid-cols-6 gap-8">
         {/* <Carousel
           imgs={[
             "https://picsum.photos/id/1043/300/400",
@@ -163,7 +166,18 @@ const Home = () => {
             "https://picsum.photos/id/1042/300/400",
           ]}
         /> */}
-        <ListSlide />
+        <div className="col-span-6 md:col-span-6 lg:col-span-2">
+          <Slides />
+        </div>
+        <div className="col-span-6 lg:col-span-4">
+          <Recommend items={stories} />
+        </div>
+      </div>
+      <div className="flex">
+        <Story story={stories[0]} size={1} />
+        <Story story={stories[0]} size={2} />
+        <Story story={stories[0]} size={3} />
+        <Story story={stories[0]} size={4} />
       </div>
     </div>
   );
