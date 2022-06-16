@@ -88,8 +88,8 @@ const NewUpdate = ({ itemss }) => {
           <tbody>
             {items.map((item) => (
               <tr className=" odd:bg-opacity-10 even:bg-opacity-5 bg-gray-light">
-                <td className="p-3 pl-6">
-                  <span className="line-clamp-1">{item.genre}</span>
+                <td className="hidden md:table-cell p-3 pl-6">
+                  <span className=" line-clamp-1">{item.genre}</span>
                 </td>
                 <td className="p-3 pl-6">
                   <Link to="/">

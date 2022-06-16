@@ -8,7 +8,7 @@ const Slide = ({ slide, offset }) => {
   return (
     <div
       ref={ref}
-      className="slide"
+      className="slide row-start-1 row-end-[-1] col-start-1 col-end-[-1]"
       data-active={active}
       style={{
         "--offset": offset,
@@ -16,16 +16,13 @@ const Slide = ({ slide, offset }) => {
       }}
     >
       <div
-        className="slideContent"
-        style={{
-          backgroundImage: `url('${slide.image}')`,
-        }}
+        className={
+          " slideContent group border border-white w-[90px] h-[120px] grid content-center bg-cover bg-center transform-preserve-3d ease-in-out duration-500 perspective-750 opacity-50"
+        }
+        style={{ backgroundImage: `url('${slide.image}')` }}
       >
-        <div className="slideContentInner">
-          <h2 className="slideTitle">{slide.title}</h2>
-          <h3 className="slideSubtitle">{slide.subtitle}</h3>
-          <p className="slideDescription">Nhĩ Căn</p>
-          {/* <p className="slideDescription line-clamp-4">{slide.description}</p> */}
+        <div className="slideContentInner transform-preserve-3d translate-z-2rem opacity-0">
+          <h2 className="uppercase m-0 text-sm text-white">{slide.title}</h2>
         </div>
       </div>
     </div>

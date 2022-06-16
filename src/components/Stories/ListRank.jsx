@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { FaMedal } from "react-icons/fa";
 import { BsFillPersonFill } from "react-icons/bs";
 import { MdOutlineLibraryBooks } from "react-icons/md";
-import Book from "../Book/Book";
+import BookCover from "../BookCover/BookCover";
 
 const ListRank = ({ items, text, icon, color }) => {
   return (
@@ -89,7 +89,7 @@ const ListRank = ({ items, text, icon, color }) => {
                   (id === 0 ? "block" : "hidden group-hover:block ")
                 }
               >
-                <Book img={"https://picsum.photos/id/1043/300/400"} />
+                <BookCover img={"https://picsum.photos/id/1043/300/400"} />
               </div>
             </div>
           </div>
