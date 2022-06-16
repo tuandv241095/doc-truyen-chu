@@ -1,8 +1,7 @@
 import React from "react";
 import { BsFillPenFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
-import MiniItem from "../Stories/MiniItem";
-import StoryBadge from "../Stories/StoryBadge";
+import Badge from "../Badge/Badge"
 
 const SlideInfo = ({ slide }) => {
   return (
@@ -15,7 +14,7 @@ const SlideInfo = ({ slide }) => {
       <div>
         <span className="line-clamp-3">{slide.description}</span>
       </div>
-      <div className="flex justify-between">
+      <div className="flex justify-between pt-1">
         <div className="flex items-center space-x-1 group hover:text-my-theme">
           <BsFillPenFill className="group-hover:text-dark dark:group-hover:text-white" />
           <p className="w-full line-clamp-1 ">
@@ -23,7 +22,7 @@ const SlideInfo = ({ slide }) => {
           </p>
         </div>
         <div className="flex min-w-[140px] justify-end">
-          <StoryBadge name={slide.subtitle} />
+          <Badge name={slide.subtitle} link={"filter"} />
         </div>
       </div>
     </div>

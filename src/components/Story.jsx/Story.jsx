@@ -1,6 +1,6 @@
 import React from "react";
 import { AiFillStar } from "react-icons/ai";
-import { BsBook, BsFillPenFill } from "react-icons/bs";
+import { BsBook, BsDot, BsFillPenFill } from "react-icons/bs";
 import { FaComments } from "react-icons/fa";
 import { MdRateReview } from "react-icons/md";
 import { Link } from "react-router-dom";
@@ -10,7 +10,7 @@ import BookCover from "../BookCover/BookCover";
 const Story = ({ story, size }) => {
   return (
     <div
-      className={"w-full flex p-1 " + (size > 2 ? "space-x-2" : "space-x-4")}
+      className={"w-full flex p-1 border-b border-opacity-10 " + (size > 2 ? "space-x-2" : "space-x-4")}
     >
       <div
         className={
@@ -21,7 +21,7 @@ const Story = ({ story, size }) => {
         }
       >
         <Link to="/">
-          {size <= 2 && <BookCover img={"https://picsum.photos/300/400"} />}
+          {size <= 2 && <BookCover img={story.img} />}
           {size > 2 && (
             <img
               className={
@@ -29,17 +29,17 @@ const Story = ({ story, size }) => {
                 (size === 3 ? "min-w-[60px]" : "") +
                 (size === 4 ? "min-w-[30px]" : "")
               }
-              src="https://picsum.photos/300/400"
+              src={story.img}
             />
           )}
         </Link>
       </div>
       <div className={"flex flex-col space-y-1"}>
-        <div className="line-clamp-1 font-bold text-sm hover:text-my-theme">
+        <div className="line-clamp-1 dark:text-white text-dark font-bold text-sm hover:text-my-theme dark:hover:text-my-theme">
           <Link to="/">{story.name}</Link>
         </div>
         {size === 1 && (
-          <div className="flex items-center space-x-1">
+          <div className="flex items-center">
             <Link
               to="/"
               className="flex items-center text-xs hover:text-dark dark:hover:text-white space-x-1"
@@ -48,7 +48,7 @@ const Story = ({ story, size }) => {
               <p className="text-xs font-semibold">{story.rate}</p>
               <AiFillStar className="text-my-theme" />
             </Link>
-            <span className="w-0.5 h-0.5 mx-1 bg-dark rounded-full dark:bg-gray-light"></span>
+            <BsDot className="w-3 -mr-1" />
             <Link
               to="/"
               className="flex items-center text-xs hover:text-dark dark:hover:text-white space-x-1"
@@ -57,7 +57,7 @@ const Story = ({ story, size }) => {
               <span className="text-xs font-semibold">{story.countRate}</span>
               <MdRateReview />
             </Link>
-            <span className="w-0.5 h-0.5 mx-1 bg-dark rounded-full dark:bg-gray-light"></span>
+            <BsDot className="w-3 -mr-1" />
             <Link
               to="/"
               className="flex items-center text-xs hover:text-dark dark:hover:text-white space-x-1"
@@ -69,7 +69,7 @@ const Story = ({ story, size }) => {
               </span>
               <FaComments className="text-blue" />
             </Link>
-            <span className="w-0.5 h-0.5 mx-1 bg-dark rounded-full dark:bg-gray-light"></span>
+            <BsDot className="w-3 -mr-1" />
             <Link
               to="/"
               className="flex items-center text-xs hover:text-dark dark:hover:text-white space-x-1"
