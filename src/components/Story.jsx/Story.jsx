@@ -7,10 +7,13 @@ import { Link } from "react-router-dom";
 import Badge from "../Badge/Badge";
 import BookCover from "../BookCover/BookCover";
 
-const Story = ({ story, size }) => {
+const Story = ({ story, size, score }) => {
   return (
     <div
-      className={"w-full flex p-1 border-b border-opacity-10 " + (size > 2 ? "space-x-2" : "space-x-4")}
+      className={
+        "w-full flex p-1 border-b border-opacity-10 " +
+        (size > 2 ? "space-x-2" : "space-x-4")
+      }
     >
       <div
         className={
@@ -38,14 +41,14 @@ const Story = ({ story, size }) => {
         <div className="line-clamp-1 dark:text-white text-dark font-bold text-sm hover:text-my-theme dark:hover:text-my-theme">
           <Link to="/">{story.name}</Link>
         </div>
-        {size === 1 && (
+        {score && (
           <div className="flex items-center">
             <Link
               to="/"
               className="flex items-center text-xs hover:text-dark dark:hover:text-white space-x-1"
             >
               <span className="sr-only">Star</span>
-              <p className="text-xs font-semibold">{story.rate}</p>
+              <span className="text-xs font-semibold">{story.rate}</span>
               <AiFillStar className="text-my-theme" />
             </Link>
             <BsDot className="w-3 -mr-1" />
@@ -63,7 +66,6 @@ const Story = ({ story, size }) => {
               className="flex items-center text-xs hover:text-dark dark:hover:text-white space-x-1"
             >
               <span className="sr-only">Comments</span>
-
               <span className="text-xs font-semibold">
                 {story.countComment}
               </span>

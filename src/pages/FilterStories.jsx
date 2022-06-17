@@ -1,6 +1,12 @@
 import React, { useState } from "react";
 import Filters from "../components/Filters/Filters";
-import Stories from "../components/Stories/Stories";
+import NavRank from "../components/NavRank/NavRank";
+import NavRankItem from "../components/NavRank/NavRankItem";
+import Pagination from "../components/Pagination/Pagination";
+import FilterResults from "../components/Section/FilterResults";
+import Select from "../components/Select/Select";
+import SelectItem from "../components/Select/SelectItem";
+import { stories } from "../data/stories";
 
 const ranks = [
   "Thinh hành",
@@ -12,99 +18,6 @@ const ranks = [
 ];
 
 const filters = ["Theo ngày", "Theo tháng", "Theo năm", "Tất cả"];
-
-const stories = [
-  {
-    id: "1",
-    name: "Luyện khí ba ngàn năm",
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-    converter: "Lorem Ipsum is simply",
-    author: "Lorem Ipsum is simply",
-    category: "Huyền huyễn",
-    rate: "4.8",
-    countRate: "110",
-    status: "Hoàn thành",
-    countChap: "99",
-    lastChap: new Date().toLocaleString(),
-    countComment: "479",
-  },
-  {
-    id: "2",
-    name: "Tôi là một con cá",
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-    converter: "Lorem Ipsum is simply",
-    author: "Lorem Ipsum is simply",
-    category: "Tiên hiệp",
-    rate: "4.8",
-    countRate: "110",
-    status: "Đang ra",
-    countChap: "1451",
-    lastChap: new Date().toLocaleString(),
-    countComment: "479",
-  },
-  {
-    id: "3",
-    name: "Tru tiên",
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-    converter: "Lorem Ipsum is simply",
-    author: "Lorem Ipsum is simply",
-    category: "Kiếm hiệp",
-    rate: "4.8",
-    countRate: "110",
-    status: "Đang ra",
-    countChap: "541",
-    lastChap: new Date().toLocaleString(),
-    countComment: "479",
-  },
-  {
-    id: "4",
-    name: "Trở lại tuổi 15",
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-    converter: "Lorem Ipsum is simply",
-    author: "Lorem Ipsum is simply",
-    category: "Trọng sinh",
-    rate: "4.8",
-    countRate: "110",
-    status: "Đang ra",
-    countChap: "145",
-    lastChap: new Date().toLocaleString(),
-    countComment: "479",
-  },
-  {
-    id: "5",
-    name: "Trở lại tuổi 15",
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-    converter: "Lorem Ipsum is simply",
-    author: "Lorem Ipsum is simply",
-    category: "Trọng sinh",
-    rate: "4.8",
-    countRate: "110",
-    status: "Hoàn thành",
-    countChap: "145",
-    lastChap: new Date().toLocaleString(),
-    countComment: "479",
-  },
-  {
-    id: "6",
-    name: "Trở lại tuổi 15",
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-    converter: "Lorem Ipsum is simply",
-    author: "Lorem Ipsum is simply",
-    category: "Trọng sinh",
-    rate: "4.8",
-    countRate: "110",
-    status: "Hoàn thành",
-    countChap: "145",
-    lastChap: new Date().toLocaleString(),
-    countComment: "479",
-  },
-];
 
 const filterStories = [
   {
@@ -174,61 +87,42 @@ const filterStories = [
       { name: "Xuyên không", id: "9" },
     ],
   },
-  {
-    type: "Bối cảnh thế giới",
-    many: true,
-    items: [
-      { name: "Huyền huyễn Đông Phương", id: "1" },
-      { name: "Dị thế", id: "2" },
-      { name: "Mạt thế", id: "3" },
-      { name: "Vương triều", id: "4" },
-      { name: "Lịch sử", id: "5" },
-      { name: "Đô thị", id: "6" },
-      { name: "Thanh xuân", id: "7" },
-      { name: "Vườn trường", id: "8" },
-      { name: "Xuyên không", id: "9" },
-    ],
-  },
-  {
-    type: "Bối cảnh thế giới",
-    many: true,
-    items: [
-      { name: "Huyền huyễn Đông Phương", id: "1" },
-      { name: "Dị thế", id: "2" },
-      { name: "Mạt thế", id: "3" },
-      { name: "Vương triều", id: "4" },
-      { name: "Lịch sử", id: "5" },
-      { name: "Đô thị", id: "6" },
-      { name: "Thanh xuân", id: "7" },
-      { name: "Vườn trường", id: "8" },
-      { name: "Xuyên không", id: "9" },
-    ],
-  },
-  {
-    type: "Bối cảnh thế giới",
-    many: true,
-    items: [
-      { name: "Huyền huyễn Đông Phương", id: "1" },
-      { name: "Dị thế", id: "2" },
-      { name: "Mạt thế", id: "3" },
-      { name: "Vương triều", id: "4" },
-      { name: "Lịch sử", id: "5" },
-      { name: "Đô thị", id: "6" },
-      { name: "Thanh xuân", id: "7" },
-      { name: "Vườn trường", id: "8" },
-      { name: "Xuyên không", id: "9" },
-    ],
-  },
 ];
 
 const FilterStories = () => {
+  const [selectRank, setSelectRank] = useState(ranks[0]);
+  const [selectRange, setSelectRange] = useState(filters[0]);
+  const [showSelect, setShowSelect] = useState(false);
   return (
     <div className="page grid grid-cols-7 gap-x-10 gap-y-3">
       <div className="col-span-7 lg:col-span-2">
         <Filters filters={filterStories} />
       </div>
-      <div className="col-span-7 lg:col-span-5 flex flex-col justify-between items-center w-full h-full">
-        <Stories ranks={ranks} stories={stories} filters={filters} />
+      <div className="col-span-7 lg:col-span-5 flex flex-col justify-between items-center w-full gap-y-3">
+        <NavRank>
+          {ranks.map((rank) => (
+            <NavRankItem
+              key={rank}
+              href="#"
+              func={setSelectRank}
+              isActive={rank === selectRank}
+              item={rank}
+            />
+          ))}
+        </NavRank>
+        <Select select={selectRange} show={showSelect} setShow={setShowSelect}>
+          {filters.map((filter) => (
+            <SelectItem
+              key={filter}
+              func={setSelectRange}
+              item={filter}
+              isActive={filter === selectRange}
+              showOff={() => setShowSelect(false)}
+            />
+          ))}
+        </Select>
+        <FilterResults items={stories} />
+        <Pagination />
       </div>
     </div>
   );

@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import SectionHeader from "./Header/SectionHeader";
 
 const items = [
   {
@@ -77,12 +78,7 @@ const items = [
 const NewUpdate = ({ itemss }) => {
   return (
     <div className="space-y-3">
-      <div className="flex justify-between items-center">
-        <span className="text-md font-semibold">Mới cập nhật</span>
-        <span className="text-xs hover:text-my-theme cursor-pointer">
-          Xem tất cả
-        </span>
-      </div>
+      <SectionHeader name={"Mới cập nhật"} />
       <div className="">
         <table className="border-collapse w-full table-auto text-xs">
           <tbody>

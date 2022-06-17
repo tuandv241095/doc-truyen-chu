@@ -19,10 +19,10 @@ const Slide = ({ slide, offset }) => {
         className={
           " slideContent group border border-white w-[90px] h-[120px] grid content-center bg-cover bg-center transform-preserve-3d ease-in-out duration-500 perspective-750 opacity-50"
         }
-        style={{ backgroundImage: `url('${slide.image}')` }}
+        style={{ backgroundImage: `url('${slide.img}')` }}
       >
         <div className="slideContentInner transform-preserve-3d translate-z-2rem opacity-0">
-          <h2 className="uppercase m-0 text-sm text-white">{slide.title}</h2>
+          <h2 className="uppercase m-0 text-sm text-white">{slide.name}</h2>
         </div>
       </div>
     </div>

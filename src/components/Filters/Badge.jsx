@@ -4,7 +4,7 @@ const Badge = ({ name, isSelected, func }) => {
   return (
     <span
       className={
-        "inline-block rounded-md mr-2 mb-2 px-2 py-1 text-xs border border-dark cursor-pointer " +
+        "inline-block rounded-md mr-1.5 mb-1.5 px-2 py-1 text-xs border border-dark cursor-pointer " +
         (isSelected
           ? "bg-gray text-white dark:border-white"
           : "dark:border-gray-light")

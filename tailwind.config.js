@@ -28,6 +28,8 @@ module.exports = {
       "my-theme-dark": "#078860",
       gold: "#ecc94b",
       blue: "#0074cc",
+      red: "#bf2c24",
+      green: "#088860",
     },
     transform: {
       // defaults to this value

@@ -1,6 +1,6 @@
 import React from "react";
 
-const FilterDate = ({ select, children, show, setShow }) => {
+const Select = ({ select, children, show, setShow }) => {
   const handleShow = () => setShow(!show);
   return (
     <div className="flex flex-col text-left w-full">
@@ -43,4 +43,4 @@ const FilterDate = ({ select, children, show, setShow }) => {
   );
 };
 
-export default FilterDate;
+export default Select;

@@ -1,17 +1,18 @@
-import img1 from "../images/1.jpg"
-import img2 from "../images/2.jpg"
-import img3 from "../images/3.jpg"
-import img4 from "../images/4.jpg"
-import img5 from "../images/5.jpg"
-import img6 from "../images/6.jpg"
-import img7 from "../images/7.jpg"
-import img8 from "../images/8.jpg"
+import img1 from "../images/1.jpg";
+import img2 from "../images/2.jpg";
+import img3 from "../images/3.jpg";
+import img4 from "../images/4.jpg";
+import img5 from "../images/5.jpg";
+import img6 from "../images/6.jpg";
+import img7 from "../images/7.jpg";
+import img8 from "../images/8.jpg";
 
 export const stories = [
   {
     id: "1",
     name: "Đỉnh Cấp Khí Vận, Lặng Lẽ Tu Luyện Ngàn Năm",
-    description: "Chuyển thế đi vào tu tiên thế giới, Hàn Tuyệt phát hiện chính mình mang theo trò chơi thuộc tính, vậy mà có thể đổ xúc xắc đổi mới linh căn tư chất cùng Tiên Thiên khí vận. Kết quả là, hắn bỏ ra mười một năm lắc Tiên Thiên khí vận",
+    description:
+      "Chuyển thế đi vào tu tiên thế giới, Hàn Tuyệt phát hiện chính mình mang theo trò chơi thuộc tính, vậy mà có thể đổ xúc xắc đổi mới linh căn tư chất cùng Tiên Thiên khí vận. Kết quả là, hắn bỏ ra mười một năm lắc Tiên Thiên khí vận",
     img: img1,
     converter: "Dark Hero",
     author: "Nhâm Ngã Tiếu",
@@ -27,7 +28,8 @@ export const stories = [
   {
     id: "2",
     name: "Vô Địch Thật Tịch Mịch",
-    description: "Diệp Phong xuyên việt đến Huyền Thiên đại lục, kích hoạt vô địch bại gia hệ thống, bắt đầu vô địch bại gia con đường. Tinh Hồn tông tông chủ Lạc Thiên Tuyết: Ta chính là thượng giới thánh nữ, bị người ám toán trọng sinh tại hạ giới Huyền Thiên đại lục, ta chỉ muốn an tĩnh tu luyện, mau chóng độ kiếp quay về thượng giới, Diệp Phong, ngươi có thể hay không đừng bại gia, ta căn bản không muốn phát triển tông môn a, ngươi là thượng thiên phái tới tra tấn ta đi!",
+    description:
+      "Diệp Phong xuyên việt đến Huyền Thiên đại lục, kích hoạt vô địch bại gia hệ thống, bắt đầu vô địch bại gia con đường. Tinh Hồn tông tông chủ Lạc Thiên Tuyết: Ta chính là thượng giới thánh nữ, bị người ám toán trọng sinh tại hạ giới Huyền Thiên đại lục, ta chỉ muốn an tĩnh tu luyện, mau chóng độ kiếp quay về thượng giới, Diệp Phong, ngươi có thể hay không đừng bại gia, ta căn bản không muốn phát triển tông môn a, ngươi là thượng thiên phái tới tra tấn ta đi!",
     converter: "Vô ưu",
     img: img2,
     author: "Chiến Thiên Ngân",
@@ -127,6 +129,40 @@ export const stories = [
   },
   {
     id: "8",
+    name: "Ta Một Người Đi Đường, Át Chủ Bài Nhiều Ức Điểm Rất Hợp Lý A",
+    description:
+      "Trăm năm trước, toàn cầu dị biến, trò chơi giáng lâm hiện thực, quái vật bắt đầu tứ ngược. Bạch Dịch làm một không thể học tập bất luận cái gì bình thường kỹ năng 【 người qua đường 】, bắt đầu đã thức tỉnh thần kỹ kỹ năng hệ thống. Từ nay về sau.",
+    converter: "Cancel No 2",
+    img: img8,
+    author: "Dạ Bất Năng Tẩm",
+    category: "Đô Thị",
+    rate: "5",
+    countRate: "3",
+    status: "Hoàn thành",
+    countChap: "14",
+    read: "1",
+    lastChap: new Date().toLocaleString(),
+    countComment: "5",
+  },
+  {
+    id: "9",
+    name: "Cặn Bã Nam Biến Vú Em: Về Đến Lão Bà Hậu Sản Ngày Tử Vong",
+    description:
+      "Mở mắt ra, thân gia ức vạn chủ tịch Chu Phong trọng sinh. Trọng sinh đến lão bà hắn Tô Tiểu Tình bởi vì được nghiêm trọng hậu sản bệnh trầm cảm nhảy núi cùng ngày! Biết được sống lại sau khi một khắc này, hắn cười đến lệ rơi đầy mặt, lão thiên cho hắn thời gian để đền bù hắn đời này tiếc nuối lớn nhất, đầu tiên hắn muốn từ lưu manh biến thành vú em!",
+    converter: "Vô Ưu",
+    img: img7,
+    author: "Lạc Tử Thất",
+    category: "Đô Thị",
+    rate: "4.9",
+    countRate: "10",
+    status: "Đang ra",
+    countChap: "45",
+    read: "1",
+    lastChap: new Date().toLocaleString(),
+    countComment: "65",
+  },
+  {
+    id: "10",
     name: "Ta Một Người Đi Đường, Át Chủ Bài Nhiều Ức Điểm Rất Hợp Lý A",
     description:
       "Trăm năm trước, toàn cầu dị biến, trò chơi giáng lâm hiện thực, quái vật bắt đầu tứ ngược. Bạch Dịch làm một không thể học tập bất luận cái gì bình thường kỹ năng 【 người qua đường 】, bắt đầu đã thức tỉnh thần kỹ kỹ năng hệ thống. Từ nay về sau.",
