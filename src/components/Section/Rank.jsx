@@ -1,9 +1,7 @@
-import { list } from "postcss";
 import React, { useState } from "react";
 
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { useMediaQuery } from "react-responsive";
-import { stories } from "../../data/stories";
 import RankCard from "../RankCard/RankCard";
 
 const Rank = ({ listRanks }) => {

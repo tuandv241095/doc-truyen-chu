@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import SectionHeader from "./Header/SectionHeader";
+import { BsFillPersonFill } from "react-icons/bs";
+import { MdOutlineLibraryBooks } from "react-icons/md";
 
 const items = [
   {
@@ -86,6 +88,7 @@ const NewUpdate = ({ itemss }) => {
               <tr className=" odd:bg-opacity-10 even:bg-opacity-5 bg-gray-light">
                 <td className="hidden md:table-cell p-3 pl-6">
                   <span className=" line-clamp-1">{item.genre}</span>
+                  
                 </td>
                 <td className="p-3 pl-6">
                   <Link to="/">

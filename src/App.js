@@ -1,9 +1,10 @@
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Banner from "./components/Banner/Banner";
 import Navbar from "./components/Navbar/Navbar";
 import FilterStories from "./pages/FilterStories";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
+import StoryInfo from "./pages/StoryInfo";
 
 const listPage = [
   {
@@ -17,6 +18,10 @@ const listPage = [
   {
     path: "filter",
     element: <FilterStories />,
+  },
+  {
+    path: "truyen/:id",
+    element: <StoryInfo />,
   },
 ];
 

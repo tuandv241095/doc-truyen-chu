@@ -9,7 +9,7 @@ import {
 const Pagination = () => {
   return (
     <div className="">
-      <ul class="flex justify-end list-reset font-sans gap-1 items-center">
+      <ul className="flex justify-end list-reset font-sans gap-1 items-center">
         <li>
           <button
             className="border p-2 hover:text-white hover:bg-gray-dark dark:hover:bg-gray-light disabled:opacity-20"
