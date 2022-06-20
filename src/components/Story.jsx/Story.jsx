@@ -7,11 +7,12 @@ import { Link } from "react-router-dom";
 import Badge from "../Badge/Badge";
 import BookCover from "../BookCover/BookCover";
 
-const Story = ({ story, size, score }) => {
+const Story = ({ story, size, score, border }) => {
   return (
     <div
       className={
-        "w-full flex p-1 border-b border-opacity-10 " +
+        "w-full flex p-1 " +
+        (border ? "border-b border-opacity-10 " : "") +
         (size > 2 ? "space-x-2" : "space-x-4")
       }
     >
@@ -39,7 +40,7 @@ const Story = ({ story, size, score }) => {
       </div>
       <div className={"flex flex-col space-y-1"}>
         <div className="line-clamp-1 dark:text-white text-dark font-bold text-sm hover:text-my-theme dark:hover:text-my-theme">
-          <Link to="/">{story.name}</Link>
+          <Link to="/truyen/1">{story.name}</Link>
         </div>
         {score && (
           <div className="flex items-center">

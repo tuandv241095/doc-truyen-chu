@@ -12,7 +12,7 @@ import { listRanks } from "../data/listRanks";
 const Home = () => {
   return (
     <div className="page flex flex-col">
-      <div className="grid  grid-cols-6 gap-6 mb-16">
+      <div className="grid grid-cols-6 gap-6 mb-16">
         <div className="md:col-start-5 col-span-6 md:col-span-2">
           <Reading
             mini

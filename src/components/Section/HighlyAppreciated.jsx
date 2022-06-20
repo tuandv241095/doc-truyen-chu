@@ -9,7 +9,7 @@ const HighlyAppreciated = ({ items }) => {
       <div className="grid grid-rows-3 sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2 gap-2 lg:gap-3 xl:gap-6">
         {items.map((story, id) => (
           <div className={id > 3 ? "hidden sm:block md:hidden lg:block" : ""}>
-            <Story key={story.id} story={story} size={3} score />
+            <Story key={story.id} story={story} size={3} score border />
           </div>
         ))}
       </div>

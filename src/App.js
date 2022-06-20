@@ -51,7 +51,7 @@ const ranks = [
 
 function App() {
   return (
-    <div className="">
+    <div>
       <BrowserRouter>
         <Navbar genres={genres} ranks={ranks} />
         <div className="main">

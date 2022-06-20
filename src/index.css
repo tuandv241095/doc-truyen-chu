@@ -42,27 +42,28 @@
   .slide[data-active] .slideContentInner {
     opacity: 1;
   }
+}
 
-  .scrollbar {
+@layer base {
+  body {
     overflow: overlay;
   }
-
-  .scrollbar::-webkit-scrollbar {
-    width: 5px;
+  body::-webkit-scrollbar {
+    width: 8px;
     height: 5px;
   }
 
-  .scrollbar::-webkit-scrollbar-track {
+  body::-webkit-scrollbar-track {
     border-radius: 100vh;
     background: transparent;
   }
 
-  .scrollbar::-webkit-scrollbar-thumb {
+  body::-webkit-scrollbar-thumb {
     background: #6b7280;
     border-radius: 100vh;
   }
 
-  .scrollbar::-webkit-scrollbar-thumb:hover {
+  body::-webkit-scrollbar-thumb:hover {
     background: #6b7280;
     border-radius: 100vh;
   }

@@ -12,7 +12,7 @@ export const stories = [
     id: "1",
     name: "Đỉnh Cấp Khí Vận, Lặng Lẽ Tu Luyện Ngàn Năm",
     description:
-      "Chuyển thế đi vào tu tiên thế giới, Hàn Tuyệt phát hiện chính mình mang theo trò chơi thuộc tính, vậy mà có thể đổ xúc xắc đổi mới linh căn tư chất cùng Tiên Thiên khí vận. Kết quả là, hắn bỏ ra mười một năm lắc Tiên Thiên khí vận",
+      "Xuyên qua toàn dân ngự thú thời đại, Tô Dịch phát hiện mình sủng thú lại có thể lựa chọn một đầu đặc thù tiến hóa lộ tuyến!{'\n'}Đương người khác còn tại cố gắng để Hồng Hồ tiến hóa làm Liệt Diễm Hồ thời điểm, hắn Cửu Vĩ Hồ Tiên đã say mê liêu trai;{'\n'}Đương người khác còn tại cố gắng để Kinh Cức Thảo tiến hóa làm Kinh Cức Thụ thời điểm, hắn Kinh Cức Nữ Hoàng đã mắc phải trung nhị;{'\n'}...{'\n'}Nhìn xem những này kỳ kỳ quái quái sủng thú, Tô Dịch rơi vào trầm tư.{'\n'}Về sau mình còn tính là Ngự Thú Sư sao?{'\n'}Đây là ngự yêu đi!",
     img: img1,
     converter: "Dark Hero",
     author: "Nhâm Ngã Tiếu",
@@ -24,6 +24,38 @@ export const stories = [
     read: "1234",
     lastChap: new Date().toLocaleString(),
     countComment: "4479",
+    badges: [
+      {
+        link: "localhost:3000/filter",
+        name: "Tiên Hiệp",
+        color: "text-red",
+      },
+      {
+        link: "localhost:3000/filter",
+        name: "Nhiệt Huyết",
+        color: "text-green",
+      },
+      {
+        link: "localhost:3000/filter",
+        name: "Đông Phương Huyền Huyễn",
+        color: "text-green",
+      },
+      {
+        link: "localhost:3000/filter",
+        name: "Chọn Lọc",
+        color: "text-blue",
+      },
+      {
+        link: "localhost:3000/filter",
+        name: "Hệ Thống",
+        color: "text-green",
+      },
+      {
+        link: "localhost:3000/filter",
+        name: "Góc Nhìn Nam",
+        color: "text-green",
+      },
+    ],
   },
   {
     id: "2",

@@ -84,7 +84,7 @@ const Navbar = ({ genres, ranks }) => {
             <li>
               <input
                 type="search"
-                className="hidden md:flex md:w-[150px] lg:w-[200px] flex-auto px-2 py-1 border rounded-full focus:outline-none focus:shadow-lg"
+                className="hidden md:flex md:w-[150px] lg:w-[200px] flex-auto px-4 py-1 border rounded-full focus:outline-none focus:shadow-lg"
                 placeholder="Search"
                 aria-label="Search"
               />
