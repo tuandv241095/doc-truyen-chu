@@ -13,6 +13,7 @@ const StoryFullInfo = ({ info }) => {
         <img
           className="min-w-[120px] md:min-w-[210px] cursor-pointer shadow-xl shadow-gray dark:shadow-gray-light"
           src={info.img}
+          alt=""
         />
       </div>
       <div className="flex flex-col items-center justify-center md:items-start md:justify-start space-y-2">

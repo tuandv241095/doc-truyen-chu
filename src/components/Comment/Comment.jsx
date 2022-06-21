@@ -5,7 +5,9 @@ import { HiReply } from "react-icons/hi";
 import RenderText from "../RenderText/RenderText";
 import { RiEmotionHappyLine } from "react-icons/ri";
 import { BiSend } from "react-icons/bi";
+import Rating from "../Rating/Rating.jsx"
 import Emotion from "./Emotion";
+import Stars from "../Rating/Stars";
 
 const Comment = ({ cm }) => {
   const [reply, setReply] = useState(false);
@@ -20,6 +22,7 @@ const Comment = ({ cm }) => {
           <img
             src={cm.author.image}
             className={"rounded-full min-w-[32px] h-[32px]"}
+            alt=""
           />
         </Link>
       </div>
@@ -31,6 +34,9 @@ const Comment = ({ cm }) => {
                 {cm.author.name}
               </div>
             </span>
+            <div className="flex justify-center items-center space-x-4 text-xs">
+              <Stars number={cm.rate} /> <span>{cm.rate}</span> <span>Đã đọc: {cm.author.haveRead} Chương</span>
+            </div>
             <span className="text-sm">
               <RenderText text={cm.body.text} />
             </span>
