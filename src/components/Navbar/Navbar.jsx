@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { FaBars, FaTimes, FaAngleDown } from "react-icons/fa";
 import { HiOutlineUserAdd, HiOutlineUser } from "react-icons/hi";
 import { BsSearch } from "react-icons/bs";
@@ -9,14 +9,22 @@ import { Link } from "react-router-dom";
 import Dropdown from "./Dropdown";
 import ListItem from "./ListItem";
 import useDarkMode from "../../hooks/useDarkMode";
+import useClickOutside from "../../hooks/useClickOutside";
 
 const Navbar = ({ genres, ranks }) => {
   const [nav, setNav] = useState(false);
-
   const handleNav = () => setNav(!nav);
+  const closeNav = () => setNav(false);
+
+  const sideBarRef = useRef(null);
+  useClickOutside(sideBarRef, closeNav);
 
   const [search, setSearch] = useState(false);
   const handleSearch = () => setSearch(!search);
+  const closeSearch = () => setSearch(false);
+
+  const mobileSearchRef = useRef(null);
+  useClickOutside(mobileSearchRef, closeSearch);
 
   const [mobileGenre, setMobileGenre] = useState(false);
   const handleGenre = () => setMobileGenre(!mobileGenre);
@@ -109,6 +117,7 @@ const Navbar = ({ genres, ranks }) => {
 
         {/* Mobile menu */}
         <div
+          ref={sideBarRef}
           className={
             !nav
               ? "hidden"
@@ -183,6 +192,7 @@ const Navbar = ({ genres, ranks }) => {
 
         {/* Mobile search */}
         <div
+          ref={mobileSearchRef}
           className={
             !search
               ? "hidden"
@@ -192,7 +202,7 @@ const Navbar = ({ genres, ranks }) => {
         >
           <div className="relative text-gray-light flex-auto">
             <input
-              className="border bg-white h-10 pl-2 pr-8 rounded-full focus:outline-none w-full "
+              className="border bg-white h-10 pl-4 pr-8 rounded-full focus:outline-none w-full "
               type="search"
               name="search"
               placeholder="Search"

@@ -9,7 +9,14 @@ const InfoBadge = ({ info }) => {
         info.color
       }
     >
-      <Link to={info.link}>{info.name}</Link>
+      <Link
+        to={{
+          pathname: "/filter",
+          search: "?sort=name",
+        }}
+      >
+        {info.name}
+      </Link>
     </span>
   );
 };

@@ -6,6 +6,7 @@ import {
   randomInterval,
   randomText,
 } from "../components/RandomData/RandomData";
+import Reviews from "../components/Reviews/Reviews";
 import StoryFullInfo from "../components/Section/StoryFullInfo";
 import { stories } from "../data/stories";
 
@@ -19,13 +20,14 @@ const StoryInfo = () => {
   }
   return (
     <div className="page">
-      <StoryFullInfo info={stories.find((s) => s.id === id)} />
+      {/* <StoryFullInfo info={stories.find((s) => s.id === id)} /> */}
       {/* <Description
         text={stories.find((s) => s.id === id).description}
         list1={stories}
         list2={stories}
       /> */}
-      <ChapterList list={listChapter} />
+      {/* <ChapterList list={listChapter} /> */}
+      <Reviews />
     </div>
   );
 };
