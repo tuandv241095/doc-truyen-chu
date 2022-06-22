@@ -49,11 +49,18 @@ const ranks = [
   { name: "Bình luận", id: "7" },
 ];
 
+const userInterfaces = [
+  { name: "Tủ sách", id: "1" },
+  { name: "Thông tin cá nhân", id: "2" },
+  { name: "Cài đặt", id: "3" },
+  { name: "Đăng xuất", id: "4" },
+];
+
 function App() {
   return (
     <div>
       <BrowserRouter>
-        <Navbar genres={genres} ranks={ranks} />
+        <Navbar genres={genres} ranks={ranks} userInterfaces={userInterfaces} />
         <div className="main">
           <Banner />
           <Routes>

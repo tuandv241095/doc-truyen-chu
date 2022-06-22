@@ -1,17 +1,25 @@
-import React, { useRef, useState } from "react";
-import { FaBars, FaTimes, FaAngleDown } from "react-icons/fa";
+import React, { useEffect, useRef, useState } from "react";
+import { FaBars, FaTimes, FaAngleDown, FaBell } from "react-icons/fa";
 import { HiOutlineUserAdd, HiOutlineUser } from "react-icons/hi";
 import { BsSearch } from "react-icons/bs";
 import { BiCategory } from "react-icons/bi";
 import { RiBarChart2Line } from "react-icons/ri";
 import { BsFillSunFill, BsFillCloudMoonFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
-import Dropdown from "./Dropdown";
+import Dropdown from "./Dropdown/Dropdown";
 import ListItem from "./ListItem";
 import useDarkMode from "../../hooks/useDarkMode";
 import useClickOutside from "../../hooks/useClickOutside";
+import Authentication from "../Authentication/Authentication";
+import UserDropdown from "./Dropdown/UserDropdown";
 
-const Navbar = ({ genres, ranks }) => {
+const Navbar = ({ genres, ranks, userInterfaces }) => {
+  const [leftInit, setLeftInit] = useState(true);
+  const [auth, setAuth] = useState(false);
+  const closeAuth = () => setAuth(false);
+  const authenRef = useRef(null);
+  useClickOutside(authenRef, closeAuth);
+
   const [nav, setNav] = useState(false);
   const handleNav = () => setNav(!nav);
   const closeNav = () => setNav(false);
@@ -36,6 +44,15 @@ const Navbar = ({ genres, ranks }) => {
   const handleTheme = () => setSun(!sun);
 
   const [setTheme, colorTheme] = useDarkMode();
+
+  const [user, setUser] = useState({});
+  useEffect(() => {
+    setInterval(() => {
+      const userString = localStorage.getItem("user");
+      const user = JSON.parse(userString);
+      setUser(user);
+    }, []);
+  }, 5000);
 
   return (
     <div className="fixed top-0 w-[100%] h-[72px] bg-white dark:bg-dark text-gray-light shadow-lg dark:shadow-gray-light z-50 font-roboto">
@@ -106,12 +123,44 @@ const Navbar = ({ genres, ranks }) => {
             <li className="hidden md:block px-4 md:px-2 lg:px-4 cursor-pointer">
               <BsSearch />
             </li>
-            <li className="px-4 hidden md:flex items-center w-full font-bold cursor-pointer hover:text-gray dark:hover:text-white hover:shadow-lg dark:shadow-gray-light py-[24px]">
-              <span>Login</span>
-            </li>
-            <li className="px-4 hidden md:flex items-center w-full font-bold cursor-pointer hover:text-gray dark:hover:text-white hover:shadow-lg dark:shadow-gray-light py-[24px]">
-              <span>Register</span>
-            </li>
+            {user && (
+              <li>
+                <FaBell className="mr-4 w-5 h-5 cursor-pointer" />
+              </li>
+            )}
+            {user && (
+              <li className="px-4 group relative hidden md:flex items-center w-full font-bold cursor-pointer hover:text-gray dark:hover:text-white hover:shadow-lg dark:shadow-gray-light py-[24px]">
+                <span className="mr-2">
+                  <img src={user.photo} className="w-7 h-7 rounded-full" />
+                </span>
+                {user.name}
+                <UserDropdown />
+              </li>
+            )}
+            {!user && (
+              <li className="px-4 hidden md:flex items-center w-full font-bold cursor-pointer hover:text-gray dark:hover:text-white hover:shadow-lg dark:shadow-gray-light py-[24px]">
+                <span
+                  onClick={() => {
+                    setAuth(true);
+                    setLeftInit(true);
+                  }}
+                >
+                  Login
+                </span>
+              </li>
+            )}
+            {!user && (
+              <li className="px-4 hidden md:flex items-center w-full font-bold cursor-pointer hover:text-gray dark:hover:text-white hover:shadow-lg dark:shadow-gray-light py-[24px]">
+                <span
+                  onClick={() => {
+                    setAuth(true);
+                    setLeftInit(false);
+                  }}
+                >
+                  Register
+                </span>
+              </li>
+            )}
           </ul>
         </div>
 
@@ -213,6 +262,7 @@ const Navbar = ({ genres, ranks }) => {
           </div>
         </div>
       </div>
+      {auth && <Authentication authenRef={authenRef} leftInit={leftInit} />}
     </div>
   );
 };
