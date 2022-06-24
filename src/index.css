@@ -42,6 +42,34 @@
   .slide[data-active] .slideContentInner {
     opacity: 1;
   }
+
+  .scrollbar {
+    overflow: hidden;
+  }
+
+  .scrollbar:hover {
+    overflow: overlay;
+  }
+
+  .scrollbar::-webkit-scrollbar {
+    width: 8px;
+    height: 5px;
+  }
+
+  .scrollbar::-webkit-scrollbar-track {
+    border-radius: 100vh;
+    background: transparent;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb {
+    background: #6b728070;
+    border-radius: 100vh;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #6b728070;
+    border-radius: 100vh;
+  }
 }
 
 @layer base {

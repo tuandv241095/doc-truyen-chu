@@ -2,9 +2,11 @@ import {
   ReactFacebookLoginInfo,
   ReactFacebookFailureResponse,
 } from "react-facebook-login";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 import { useFacebookMutation } from "../stores/services/authentication.service";
+import { setUser } from "../stores/slices/user.slice";
 
 const useFacebookAuthentication = () => {
   const [
@@ -13,6 +15,7 @@ const useFacebookAuthentication = () => {
   ] = useFacebookMutation();
 
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const handleResponse = (response) => {
     if ("accessToken" in response) {
@@ -27,6 +30,7 @@ const useFacebookAuthentication = () => {
           localStorage.setItem("token", res.accessToken);
           localStorage.setItem("refreshToken", res.refreshAccessToken);
           localStorage.setItem("user", JSON.stringify(res.user));
+          dispatch(setUser(JSON.stringify(res.user)));
           // navigate("/");
         });
     }

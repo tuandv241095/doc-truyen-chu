@@ -1,10 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const UserDropdown = () => {
-  const logout = () => {
-    return localStorage.removeItem("user");
-  };
+const UserDropdown = ({ logout }) => {
   const userInterfaces = [
     {
       text: "Thông tin cá nhân",

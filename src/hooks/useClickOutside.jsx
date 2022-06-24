@@ -1,9 +1,15 @@
 import { useEffect } from "react";
 
-const useClickOutside = (ref, action) => {
+const useClickOutside = (ref, action, except) => {
   useEffect(() => {
     function handleClickOutside(event) {
-      if (ref.current && !ref.current.contains(event.target)) {
+      if (
+        ref.current &&
+        (except
+          ? except.current && !except.current.contains(event.target)
+          : true) &&
+        !ref.current.contains(event.target)
+      ) {
         action();
       }
     }

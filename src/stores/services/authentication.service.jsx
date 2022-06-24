@@ -15,6 +15,13 @@ export const authenticationApi = createApi({
         body: credentials,
       }),
     }),
+    register: build.mutation({
+      query: (credentials) => ({
+        url: "/authentication/register",
+        method: "POST",
+        body: credentials,
+      }),
+    }),
     whoami: build.query({
       query: () => ({
         url: "/authentication/whoami",
@@ -40,6 +47,7 @@ export const authenticationApi = createApi({
 
 export const {
   useLoginMutation,
+  useRegisterMutation,
   useWhoamiQuery,
   useGoogleMutation,
   useFacebookMutation,

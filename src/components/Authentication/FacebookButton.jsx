@@ -3,7 +3,7 @@ import FacebookLogin from "react-facebook-login/dist/facebook-login-render-props
 import { FaFacebookF } from "react-icons/fa";
 import useFacebookAuthentication from "../../hooks/useFacebookAuthentication";
 
-const FacebookButton = () => {
+const FacebookButton = ({ func }) => {
   const clientId = process.env.REACT_APP_GOOGLE_AUTH_CLIENT_ID;
   const { handleResponse, onFailure } = useFacebookAuthentication();
 
@@ -21,6 +21,7 @@ const FacebookButton = () => {
       fields="name,email,picture"
       callback={handleResponse}
       onFailure={onFailure}
+      onClick={func}
     />
   );
 };

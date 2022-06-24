@@ -3,7 +3,7 @@ import GoogleLogin from "react-google-login";
 import { FaGoogle } from "react-icons/fa";
 import useGoogleAuthentication from "../../hooks/useGoogleAuthentication";
 
-const GoogleButton = () => {
+const GoogleButton = ({ func }) => {
   const clientId = process.env.REACT_APP_GOOGLE_AUTH_CLIENT_ID;
   const { handleSuccess, onFailure } = useGoogleAuthentication();
 
@@ -12,7 +12,10 @@ const GoogleButton = () => {
       clientId={clientId}
       render={(renderProps) => (
         <span
-          onClick={renderProps.onClick}
+          onClick={() => {
+            renderProps.onClick();
+            func();
+          }}
           className="border-4 border-gray-light dark:border-dark rounded-full p-2 mx-1 cursor-pointer"
         >
           <FaGoogle className="text-lg" />

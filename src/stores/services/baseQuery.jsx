@@ -18,6 +18,7 @@ const baseQueryRefresh = fetchBaseQuery({
   prepareHeaders: async (headers, { getState }) => {
     const refreshToken = localStorage.getItem("refreshToken");
     if (refreshToken) {
+      console.log(refreshToken);
       headers.set("Authorization", `Bearer ${refreshToken}`);
     }
     return headers;
@@ -30,7 +31,7 @@ export const baseQueryWithReauth = async (args, api, extraOptions) => {
   if (result.error && result.error.status === 401) {
     const refreshResult = await baseQueryRefresh(
       {
-        url: "/auth/refresh",
+        url: "/authentication/refresh",
         method: "GET",
       },
       api,
@@ -40,7 +41,8 @@ export const baseQueryWithReauth = async (args, api, extraOptions) => {
       localStorage.setItem("token", refreshResult.data.accessToken);
       result = await baseQuery(args, api, extraOptions);
     } else {
-      window.location.href = "/login";
+      // window.location.href = "/login";
+      console.log(refreshResult);
     }
   }
   return result;
