@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Banner from "./components/Banner/Banner";
 import Navbar from "./components/Navbar/Navbar";
 import FilterStories from "./pages/FilterStories";
-import Home from "./pages/Home";
+import Home from "./pages/home/Home";
 import Login from "./pages/Login";
 import StoryInfo from "./pages/StoryInfo";
 
@@ -60,7 +60,7 @@ function App() {
   return (
     <div>
       <BrowserRouter>
-        <Navbar genres={genres} ranks={ranks} userInterfaces={userInterfaces} />
+        {/* <Navbar genres={genres} ranks={ranks} userInterfaces={} /> */}
         <div className="main">
           <Banner />
           <Routes>

@@ -1,13 +1,13 @@
 import React from "react";
-import HighlyAppreciated from "../components/Section/HighlyAppreciated";
-import NewStories from "../components/Section/NewStories";
-import Rank from "../components/Section/Rank";
-import Reading from "../components/Section/Reading";
-import RecommendList from "../components/Section/Recommend";
-import Trending from "../components/Section/Trending";
-import NewUpdate from "../components/Section/NewUpdate";
-import { stories } from "../data/stories";
-import { listRanks } from "../data/listRanks";
+import HighlyAppreciated from "../../components/Section/HighlyAppreciated";
+import NewStories from "../../components/Section/NewStories";
+import Rank from "../../components/Section/Rank";
+import Reading from "../../components/Section/Reading";
+import RecommendList from "../../components/Section/Recommend";
+import Trending from "../../components/Section/Trending";
+import NewUpdate from "../../components/Section/NewUpdate";
+import { stories } from "../../data/stories";
+import { listRanks } from "../../data/listRanks";
 
 const Home = () => {
   return (

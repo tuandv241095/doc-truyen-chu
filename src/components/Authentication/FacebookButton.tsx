@@ -4,12 +4,12 @@ import { FaFacebookF } from "react-icons/fa";
 import useFacebookAuthentication from "../../hooks/useFacebookAuthentication";
 
 const FacebookButton = ({ func }) => {
-  const clientId = process.env.REACT_APP_GOOGLE_AUTH_CLIENT_ID;
+  const clientId = process.env.REACT_APP_FACEBOOK_AUTH_CLIENT_ID;
   const { handleResponse, onFailure } = useFacebookAuthentication();
 
   return (
     <FacebookLogin
-      appId="257916696327469"
+      appId={clientId}
       render={(renderProps) => (
         <span
           onClick={renderProps.onClick}

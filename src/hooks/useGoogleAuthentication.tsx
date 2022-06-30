@@ -1,29 +1,27 @@
 import {
-  ReactFacebookLoginInfo,
-  ReactFacebookFailureResponse,
-} from "react-facebook-login";
+  GoogleLoginResponse,
+  GoogleLoginResponseOffline,
+} from "react-google-login";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
-import { useFacebookMutation } from "../stores/services/authentication.service";
+import { useGoogleMutation } from "../stores/services/authentication.service";
 import { setUser } from "../stores/slices/user.slice";
 
-const useFacebookAuthentication = () => {
-  const [
-    FacebookLogin,
-    { isLoading: isFacebookLoggingIn, error: FacebookLoginErr },
-  ] = useFacebookMutation();
+const useGoogleAuthentication = () => {
+  const [googleLogin, { isLoading: isGoogleLoggingIn, error: googleLoginErr }] =
+    useGoogleMutation();
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const handleResponse = (response) => {
+  const handleSuccess = (
+    response: GoogleLoginResponse | GoogleLoginResponseOffline
+  ) => {
     if ("accessToken" in response) {
       const accessToken = response.accessToken;
-      FacebookLogin({
-        name: response.name || "Guest",
-        photo: response.picture?.data.url || " ",
-        usernameOrEmail: response.email || "Guest",
+      googleLogin({
+        token: accessToken,
       })
         .unwrap()
         .then((res) => {
@@ -36,14 +34,14 @@ const useFacebookAuthentication = () => {
     }
   };
 
-  const onFailure = (err) => {
+  const onFailure = (err: any) => {
     console.log("Failure: ", err);
   };
 
   return {
-    handleResponse,
+    handleSuccess,
     onFailure,
   };
 };
 
-export default useFacebookAuthentication;
+export default useGoogleAuthentication;

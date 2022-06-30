@@ -9,7 +9,6 @@ const userSlice = createSlice({
   initialState,
   reducers: {
     setUser: (state, { payload }) => {
-      console.log(payload);
       state.user = JSON.parse(payload);
     },
     removeUser: (state) => {
